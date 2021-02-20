@@ -1,3 +1,4 @@
+This project will help to thest the performance of a functions exposed from the java library (SDK) and deployed in a Restful Server.
 
 ## Technologies
 * Java 1.8+
@@ -21,6 +22,7 @@ Setup
 
 How to test?
 ------------
+Use any of the tools of your choice for the client (postman / curl / http client plugin in Intellij / ...)
 
 1) Start benchmarking for SampleTask
 ```
@@ -43,4 +45,3 @@ POST http://localhost:8080/benchmarking/start
 ```
 GET http://localhost:8080/benchmarking/result
 ```
-
