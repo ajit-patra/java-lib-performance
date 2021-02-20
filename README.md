@@ -7,7 +7,7 @@ Project is created with:
 
 
 Setup
------------
+-----
 
 1) Using Intellij IDE
 * Open the project in intellij
@@ -22,7 +22,7 @@ Setup
 
 How to test?
 ------------
-Send the request from postman
+
 1) Start benchmarking for SampleTask
 ```
 POST http://localhost:8080/benchmarking/start
