@@ -18,9 +18,9 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class BechmarkingService {
+public class BenchmarkingService {
 
-    private static final Logger logger = LoggerFactory.getLogger(BechmarkingService.class);
+    private static final Logger logger = LoggerFactory.getLogger(BenchmarkingService.class);
 
     private Executor executor;
     private List<BaseTask> taskList;
@@ -68,11 +68,11 @@ public class BechmarkingService {
 
     public PerfResultArgs getPerfResult() throws Exception {
         if (executor == null) {
-            throw new Exception("Performance measurement has not started.");
+            throw new Exception("Benchmarking has not started.");
         }
 
         if (executor.getPerfResult() == null) {
-            throw new Exception("Performance measurement is in progress ... ");
+            throw new Exception("Benchmarking is in progress ... ");
         }
 
         return executor.getPerfResult();

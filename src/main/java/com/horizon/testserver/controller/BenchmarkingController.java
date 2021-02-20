@@ -5,7 +5,7 @@ import com.horizon.testserver.dto.ResErrorArgs;
 import com.horizon.testserver.dto.PerfItrArgs;
 import com.horizon.testserver.dto.PerfResultArgs;
 import com.horizon.testserver.dto.PerfTaskArgs;
-import com.horizon.testserver.service.BechmarkingService;
+import com.horizon.testserver.service.BenchmarkingService;
 import com.horizon.testserver.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +20,7 @@ public class BenchmarkingController {
     private static final Logger logger = LoggerFactory.getLogger(BenchmarkingController.class);
 
     @Autowired
-    private BechmarkingService benchmarkService;
+    private BenchmarkingService benchmarkService;
 
     @RequestMapping(value = "/benchmarking/start", method = RequestMethod.POST)
     public ResponseEntity<?> startBenchmarking(@RequestBody PerfTaskArgs taskParam) {
