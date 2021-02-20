@@ -1,0 +1,13 @@
+{
+  "threadPoolSize": 1,
+  "warmUpThreads": 1,
+  "threads": 1,
+  "iterationParam": [
+    {
+      "name": "com.horizon.testserver.concurrency.tasks.SampleTask",
+      "iteration": 1,
+      "warmUpIteration": 1,
+      "data": "string data. it can be also a custom data type with minor changes to PerfItrArgs"
+    }
+  ]
+}

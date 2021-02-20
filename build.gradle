@@ -1,0 +1,64 @@
+group 'com.horizon.testserver'
+version '0.0.1-SNAPSHOT'
+
+buildscript {
+
+    apply plugin: 'maven'
+
+    repositories {
+        mavenCentral()
+    }
+    ext {
+        springBootVersion = '2.2.4.RELEASE'
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'maven'
+apply plugin: 'java-library-distribution'
+apply plugin: 'maven-publish'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    implementation "org.springframework:spring-web"
+
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor "org.projectlombok:lombok:1.18.10"
+    testCompileOnly "org.projectlombok:lombok:1.18.10"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.10"
+
+    implementation "com.google.code.gson:gson:2.8.6"
+    implementation "org.apache.commons:commons-lang3:3.10"
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion") {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testImplementation("org.springframework.boot:spring-boot-test:$springBootVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.horizon.testserver.Application'
+    }
+}
