@@ -23,7 +23,7 @@ public class BenchmarkingController {
     private BechmarkingService benchmarkService;
 
     @RequestMapping(value = "/benchmarking/start", method = RequestMethod.POST)
-    public ResponseEntity<?> benchmarking(@RequestBody PerfTaskArgs taskParam) {
+    public ResponseEntity<?> startBenchmarking(@RequestBody PerfTaskArgs taskParam) {
 
         try {
             logger.info("Inside benchmarking");
@@ -83,7 +83,7 @@ public class BenchmarkingController {
     }
 
     @RequestMapping(value = "/benchmarking/result", method = RequestMethod.GET)
-    public ResponseEntity<?> getPerfResult() {
+    public ResponseEntity<?> getResult() {
 
         try {
             PerfResultArgs result = benchmarkService.getPerfResult();
