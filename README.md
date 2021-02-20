@@ -45,3 +45,35 @@ POST http://localhost:8080/benchmarking/start
 ```
 GET http://localhost:8080/benchmarking/result
 ```
+
+Result for the above requestwill be similar to below:
+```
+{
+    "threads": 3,
+    "warmUpThreads": 1,
+    "iterationData": [
+        {
+            "name": "com.horizon.testserver.concurrency.tasks.SampleTask",
+            "iteration": 20,
+            "warmUpIteration": 1
+        }
+    ],
+    "passCnt": 60,
+    "failCnt": 0,
+    "executionTime": 58032.0,
+    "elapsedTime": 54984.426,
+    "tp": 0.0010912181,
+    "mean": 916.40704,
+    "sd": 601.1808,
+    "min": 6.473503,
+    "p25": 498.39926,
+    "p50": 822.28674,
+    "p75": 1446.2377,
+    "p90": 1927.5947,
+    "p95": 1972.276,
+    "p99": 1994.074,
+    "p99_9": 1994.074,
+    "p99_99": 1994.074,
+    "max": 1994.074
+}
+```
