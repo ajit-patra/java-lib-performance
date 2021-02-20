@@ -1,11 +1,12 @@
 
-Pre-requisite:
---------------
+## Technologies
+Project is created with:
+* Java 1.8+
+* Gradle 6.1.1
+* Springboot 2.2.4
 
-1) Java 1.8+
-2) Gradle 6.1.1
 
-How to run?
+Setup
 -----------
 
 1) Using Intellij IDE
@@ -23,6 +24,7 @@ How to test?
 ------------
 Send the request from postman
 1) Start benchmarking for SampleTask
+```
 POST http://localhost:8080/benchmarking/start
 {
     "threadPoolSize": 4,
@@ -37,7 +39,9 @@ POST http://localhost:8080/benchmarking/start
         }
     ]
 }
-
+```
 2) Get the benchmarking result of the previous run
+```
 GET http://localhost:8080/benchmarking/result
+```
 
