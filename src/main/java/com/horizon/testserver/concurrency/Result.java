@@ -7,11 +7,10 @@ import java.util.List;
 
 public class Result
 {
-    private String name;
-    private String timestamp;
-    private boolean res;
-    private long threadId;
-    private List<Pair<Float, Boolean>> response;
+    private final String name;
+    private final String timestamp;
+    private final long threadId;
+    private final List<Pair<Float, Boolean>> response;
 
     Result(String name, long threadId, List<Pair<Float, Boolean>> response) {
         super();
