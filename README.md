@@ -1,6 +1,9 @@
-This project will help to thest the performance of a functions exposed from the java library (SDK) and deployed in a Restful Server.
+This project will help to test the performance of a functions exposed from the java library (SDK) and deployed in a 
+RESTful Server. This solution is inspired from "JMH Java Microbenchmark Harness" and I could not find a way to integrate
+JMH in a RESTful server.
 
-## Technologies
+Technologies
+------------
 * Java 1.8+
 * Gradle 6.1.1
 * Springboot 2.2.4
@@ -8,7 +11,6 @@ This project will help to thest the performance of a functions exposed from the 
 
 Setup
 -----
-
 1) Using Intellij IDE
 * Open the project in intellij
 * Right click on "java-sdk-benchmarking -> src -> main -> java -> com.horizon.testserver -> Application"
@@ -46,7 +48,7 @@ POST http://localhost:8080/benchmarking/start
 GET http://localhost:8080/benchmarking/result
 ```
 
-Result for the above requestwill be similar to below:
+Result for the above request will be similar to below:
 ```
 {
     "threads": 3,
