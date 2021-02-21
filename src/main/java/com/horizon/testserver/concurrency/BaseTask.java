@@ -33,7 +33,6 @@ public abstract class BaseTask implements Callable<Result> {
             boolean response;
             long start;
             float respTime;
-            //List<FloatBooleanPairArgs> responseTime = new ArrayList<>();
             List<Pair<Float, Boolean>> responseTime1 = new ArrayList<>();
             String template = "[ %1$-10s ] --- threadId:%2$3s,  timestamp:%3$25s,  responseTime (ms):%4$13s,  result:%5$5s";
 
@@ -43,7 +42,6 @@ public abstract class BaseTask implements Callable<Result> {
                 count++;
                 response = doTask();
                 respTime = (float) (System.nanoTime() - start)/1000000;
-                //responseTime.add(new FloatBooleanPairArgs(respTime, response));
                 responseTime1.add(Pair.of(respTime, response));
 
                 System.out.printf((template) + "%n", this.name, Thread.currentThread().getId(),
