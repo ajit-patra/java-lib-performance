@@ -32,12 +32,10 @@ public class BenchmarkingService {
         itrList = new HashMap<>(taskParam.getIterationParam().size());
         for (PerfItrArgs param: taskParam.getIterationParam()) {
             BaseTask task;
-            Class<?> c;
-            try{
-                c = Class.forName(param.getName()) ;
-                Constructor<?> cons = c.getDeclaredConstructor(new Class[] { PerfItrArgs.class });
-                task = (BaseTask)cons.newInstance(new Object[]{param});
 
+            try {
+                Constructor<?> cons = Class.forName(param.getName()).getDeclaredConstructor(PerfItrArgs.class);
+                task = (BaseTask)cons.newInstance(new Object[]{param});
             } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException
                     | InvocationTargetException ex) {
                 logger.error(ex.getMessage());
