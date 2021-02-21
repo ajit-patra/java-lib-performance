@@ -2,8 +2,8 @@ package com.horizon.testserver.concurrency;
 
 import com.horizon.testserver.dto.PerfItrResultArgs;
 import com.horizon.testserver.dto.PerfResultArgs;
-import com.horizon.testserver.dto.FloatBooleanPairArgs;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -99,10 +99,10 @@ public class Executor {
 
     private void updateStatistics(Result res) {
 
-        for (FloatBooleanPairArgs pair: res.getResponse()) {
-            if (pair.isValue()) {
-                this.totalElapsedTime += pair.getType();
-                this.respTimeList.add(pair.getType());
+        for (Pair<Float,Boolean> pair: res.getResponse()) {
+            if (pair.getRight()) {
+                this.totalElapsedTime += pair.getLeft();
+                this.respTimeList.add(pair.getLeft());
                 this.passCount++;
             }
             else {

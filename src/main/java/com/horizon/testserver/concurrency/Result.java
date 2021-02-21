@@ -1,7 +1,8 @@
 package com.horizon.testserver.concurrency;
 
 import java.time.LocalDateTime;
-import com.horizon.testserver.dto.FloatBooleanPairArgs;
+import org.apache.commons.lang3.tuple.Pair;
+
 import java.util.List;
 
 public class Result
@@ -10,9 +11,9 @@ public class Result
     private String timestamp;
     private boolean res;
     private long threadId;
-    private List<FloatBooleanPairArgs> response;
+    private List<Pair<Float, Boolean>> response;
 
-    Result(String name, long threadId, List<FloatBooleanPairArgs> response) {
+    Result(String name, long threadId, List<Pair<Float, Boolean>> response) {
         super();
         this.name = name;
         this.timestamp = LocalDateTime.now().toString();
@@ -20,7 +21,7 @@ public class Result
         this.threadId = threadId;
     }
 
-    List<FloatBooleanPairArgs> getResponse() {
+    List<Pair<Float, Boolean>> getResponse() {
         return this.response;
     }
 
