@@ -20,7 +20,7 @@ Setup
 2) Using terminal
 * $ ./gradlew clean build
 * $ java -jar -Dspring.profiles.active=test build/libs/java-sdk-benchmarking-0.0.1-SNAPSHOT.jar
-* It will listen on port 8090
+* It will listen on port 8080
 
 How to test?
 ------------
