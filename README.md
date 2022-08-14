@@ -7,6 +7,7 @@ Technologies
 * Java 1.8+
 * Gradle 6.1.1
 * Springboot 2.2.4
+*
 
 
 Setup
